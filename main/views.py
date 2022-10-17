@@ -12,17 +12,15 @@ FACE_DETECTOR_PATH_2 = "{base_path}/frontalface_alt.xml".format(base_path=os.pat
 @gzip.gzip_page
 def With_0(request):
     try: 
-        cam = VideoCamera_0()
-        return StreamingHttpResponse(gen(cam), content_type="multipart/x-mixed-replace;boundary=frame")
+        return StreamingHttpResponse(gen(VideoCamera_0()), content_type="multipart/x-mixed-replace;boundary=frame")
     except:
         pass
     return render(request, '0.html')
 
 @gzip.gzip_page
 def With_1(request):
-    try:  
-        cam = VideoCamera_1()
-        return StreamingHttpResponse(gen(cam), content_type="multipart/x-mixed-replace;boundary=frame")
+    try:
+        return StreamingHttpResponse(gen(VideoCamera_1()), content_type="multipart/x-mixed-replace;boundary=frame")
     except:
         pass
     return render(request, '1.html')
